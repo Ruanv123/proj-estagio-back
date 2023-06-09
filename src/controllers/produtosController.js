@@ -26,7 +26,7 @@ async function get(req, res) {
 
 async function update(req, res) {
   try {
-    const produtos = await updateProdutos(req.body);
+    const produtos = await updateProdutos(Number(req.params.id), req.body);
     res.status(200).send(produtos);
   } catch (error) {
     res.status(400).send(error);
